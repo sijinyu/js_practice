@@ -41,7 +41,3 @@ stack.push(11);
 stack.push(12);
 stack.pop();
 stack.pop();
-
-console.log(stack);
-
-//que (push, shift) (unShift, pop) , stack push pop
