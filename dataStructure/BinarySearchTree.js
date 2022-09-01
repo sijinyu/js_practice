@@ -50,18 +50,7 @@ class BinarySearchTree {
     }
     return false;
   }
-  //   BFS() {
-  //     var data= [],
-  //         queue=[]
-  //         node = this.root
-  //     queue.push(node)
-  //     queue.push(this.root)
-  //     while(queue.length)
-  //         queue.shift()
-
-  //   }
 }
 
-// console.log([])
 var tree = new BinarySearchTree();
 tree.insert(1);
