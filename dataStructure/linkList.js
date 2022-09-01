@@ -105,7 +105,39 @@ class SinglyLinkedList {
     this.length--;
     return removed;
   }
+  print() {
+    var current = this.head;
+    let arr = [];
+    while (current) {
+      arr.push(current.val);
+      current = current.next;
+    }
+    console.log(arr);
+  }
+  reverse() {
+    let temp = this.head;
+    this.head = this.tail;
+    this.tail = temp;
+    var next = null;
+    var prev = null;
+    for (var i = 0; i < this.length; i++) {
+      next = temp.next;
+      temp.next = prev;
+      prev = temp; //prev 1 2
+      temp = next;
+    }
+    return this;
+  }
 }
+// [1,2,3,4,5]
+/**
+ 
+ * 
+ 
+ * 2 null
+         1
+                    
+ */
 // let first = new Node("HI")
 // first.next = new Node("therer")
 // first.next.next = new Node('how')
@@ -118,5 +150,4 @@ list.push("GOODBY");
 list.push("how");
 list.push("are");
 list.push("you");
-list.set(0, "Hel");
-console.log(list);
+list.reverse();
