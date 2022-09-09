@@ -12,13 +12,12 @@ class Stack {
     this.size = 0;
   }
   push(val) {
-    var newNode = new Node(val);
+    let newNode = new Node(val);
     if (!this.first) {
-      console.log(1);
       this.first = newNode;
       this.last = newNode;
     } else {
-      var oldNode = this.first;
+      let oldNode = this.first;
       this.first = newNode;
       newNode.next = oldNode;
     }
@@ -26,7 +25,7 @@ class Stack {
   }
   pop() {
     if (!this.frist) return null;
-    var oldNode = this.first;
+    let oldNode = this.first;
     if (this.first === this.last) {
       this.last = null;
     }
@@ -35,8 +34,7 @@ class Stack {
     return oldNode.val;
   }
 }
-let test = new Stack();
-test.push(1);
-test.push(2);
-test.push(3);
-console.log(test);
+let stack = new Stack();
+stack.push(1);
+stack.push(2);
+stack.push(3);

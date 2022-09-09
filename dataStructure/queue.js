@@ -5,12 +5,6 @@ class Node {
   }
 }
 
-const test3 = { val: 1, next: 2 };
-
-const test1 = test3;
-let test2 = test3;
-test2.next = 123;
-console.log(test1, test2);
 class Queue {
   constructor() {
     this.first = null;
@@ -18,7 +12,7 @@ class Queue {
     this.size = 0;
   }
   enqueue(val) {
-    var newNode = { val: 1, next: null };
+    var newNode = new Node(val);
     if (!this.first) {
       this.first = newNode;
       this.last = newNode;
@@ -40,7 +34,4 @@ class Queue {
   }
 }
 
-let test = new Queue();
-test.enqueue(1);
-test.enqueue(2);
-test.enqueue(3);
+let queue = new Queue();

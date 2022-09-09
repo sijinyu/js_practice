@@ -7,12 +7,7 @@
 // 컴파일 -> 인터프리팅   , 컴파일 단계 -> var a; // 변수 선언 단계  a = 2 //변수 초기화 단계
 
 //선언부가 호이스팅되므로 2를 정상적으로 출력하는 함수
-function test() {
-  console.log(b);
-  console.log(a);
-  let b = 1;
-  var a = 1;
-}
+
 function foo() {
   a = 2;
   var a = 2;
@@ -32,6 +27,3 @@ function makeCounter() {
     return num++;
   };
 }
-
-let counter = makeCounter();
-test();

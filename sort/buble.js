@@ -82,58 +82,55 @@ function quickSort(arr) {
   return [...lSorted, pivot, ...rSorted];
 }
 
-function test(amounts) {
-  amounts = amounts.reduce(
-    (acc, v) => (acc += parseFloat(v.reaplceAll(",", "").replace("원", ""))),
-    0
-  );
-  return amounts;
-}
-function test2(s) {
-  let stackCount = 0;
-  var answer = true;
-  var s = s.split("");
+// function practice(amounts) {
+//   amounts = amounts.reduce(
+//     (acc, v) => (acc += parseFloat(v.reaplceAll(",", "").replace("원", ""))),
+//     0
+//   );
+//   return amounts;
+// }
+// function practiceTwo(s) {
+//   let stackCount = 0;
+//   var answer = true;
+//   var s = s.split("");
 
-  for (let i = 0; i < s.length; i++) {
-    stackCount += s[i] === "(" ? 1 : -1;
-    if (stackCount < 0) return false;
-  }
-  if (stackCount !== 0) answer = false;
-  return answer;
-}
+//   for (let i = 0; i < s.length; i++) {
+//     stackCount += s[i] === "(" ? 1 : -1;
+//     if (stackCount < 0) return false;
+//   }
+//   if (stackCount !== 0) answer = false;
+//   return answer;
+// }
 
-function test4(id) {
-  let star =
-    id % 2 === 0 ? Math.round(id.length / 2) : Math.round((id.length - 1) / 2);
-  let visibleId = id.length - star;
-  star = "*".repeat(star);
-  let start =
-    visibleId % 2 === 0
-      ? Math.round(id.length / 2 / 2)
-      : Math.floor(id.length / 2 / 2);
-  console.log(start);
-  let end = -(visibleId - start);
-  var answer = id.substring(0, start) + star + id.slice(end);
-  return answer;
-}
+// function practiceThree(id) {
+//   let star =
+//     id % 2 === 0 ? Math.round(id.length / 2) : Math.round((id.length - 1) / 2);
+//   let visibleId = id.length - star;
+//   star = "*".repeat(star);
+//   let start =
+//     visibleId % 2 === 0
+//       ? Math.round(id.length / 2 / 2)
+//       : Math.floor(id.length / 2 / 2);
+//   console.log(start);
+//   let end = -(visibleId - start);
+//   var answer = id.substring(0, start) + star + id.slice(end);
+//   return answer;
+// }
 
-function test5(html) {
-  let stack = [];
-  const tagList = html.match(/<[^>]+>?/g);
-  if (tagList.length < 0) return false;
-  for (let i = 0; i < tagList.length; i++) {
-    if (tagList[0][1] === "/") return false;
-    if (tagList[i][1] !== "/") {
-      stack[i] = tagList[i];
-    }
-  }
-  for (let i = 0; i < tagList.length; i++) {
-    if (tagList[i][1] === "/") {
-      stack.pop();
-    }
-  }
-  return stack.length === 0;
-}
-// console.log(test2("<div></div>"));
-// console.log(test3("<img />"));
-console.log(test5("<div><button></button></div>"));
+// function practiceFour(html) {
+//   let stack = [];
+//   const tagList = html.match(/<[^>]+>?/g);
+//   if (tagList.length < 0) return false;
+//   for (let i = 0; i < tagList.length; i++) {
+//     if (tagList[0][1] === "/") return false;
+//     if (tagList[i][1] !== "/") {
+//       stack[i] = tagList[i];
+//     }
+//   }
+//   for (let i = 0; i < tagList.length; i++) {
+//     if (tagList[i][1] === "/") {
+//       stack.pop();
+//     }
+//   }
+//   return stack.length === 0;
+// }

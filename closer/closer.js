@@ -14,18 +14,20 @@ var myFunc = makeFunc();
 myFunc();
 
 //클로저가 아닌 예시
-// function foo() {
-//   var color = "blue";
-//   //foo 스코프를 외부 렉시컬 환경으로 참조하여 저장한다.
-//   function bar() {
-//     console.log(color);
-//   }
-//   bar();
-// }
+function foo() {
+  var color = "blue";
+  //foo 스코프를 외부 렉시컬 환경으로 참조하여 저장한다.
+  function bar() {
+    console.log(color);
+  }
+  bar();
+}
 
-// const test = foo(); //blue를 출력
-// test();
-
+function outer() {
+  const a = 1;
+  console.log(a);
+}
+outer();
 // 클로저 예시
 // var color = "red";
 // function foo() {
