@@ -1,0 +1,97 @@
+<!-- /***
+ Angular 가 CSR의 시작 이었다면, React는 컴포넌트 기반 개발의시작, 
+ Angular와 React의 장점을 모두 수용한 Vue가 나옴
+
+ 컴포넌트 기반 구조 법칙
+
+ state가 변경되면 render를 실행한다.
+ state는 setState로만 변경해야 한다.
+
+ 이러한 규칙으로 DOM을 직접 접근하는데 아니라. state에 종속되는 것
+ */ -->
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Component</title>
+  </head>
+  <body>
+    <h1>asdasd</h1>
+    <div id="app"></div>
+    <script src="./src/main.js" type="module"></script>
+  </body>
+</html>
+
+<!-- <script>
+  const app = document.querySelector("#app");
+  let state = {
+    items: ["item1", "item2", "item3", "item4"],
+  };
+
+  const render = () => {
+    const { items } = state;
+    app.innerHTML = `
+        <ul>
+            ${items.map((item) => `<li>${item}</li>`).join("")}
+        </ul>
+        <button id="append">추가</button>
+    `;
+    document.querySelector("#append").addEventListener("click", () => {
+      setState({ items: [...items, `item${items.length + 1}`] });
+    });
+  };
+
+  const setState = (newState) => {
+    state = { ...state, ...newState };
+    console.log(state);
+    render();
+  };
+  render();
+</script> -->
+
+<!-- 클래스 문법 -->
+<!-- 
+<script>
+  class Component {
+    target;
+    state;
+    constructor(target) {
+      this.target = target;
+      this.setup();
+      this.render();
+    }
+    setup() {}
+    render() {
+      this.target.innerHTML = this.template();
+      this.setEvent();
+    }
+    setEvent() {}
+    setState(newState) {
+      console.log(newState, this.state);
+      this.state = { ...this.state, ...newState };
+      this.render();
+    }
+  }
+  class App extends Component {
+    setup() {
+      this.state = { items: ["item1", "item2"] };
+    }
+    template() {
+      const { items } = this.state;
+      return `
+                <ul>
+                    ${items.map((item) => `<li>${item}</li>`).join("")}
+                </ul>
+                <button>추가</button>
+            `;
+    }
+    setEvent() {
+      this.target.querySelector("button").addEventListener("click", () => {
+        const { items } = this.state;
+        this.setState({ items: [...items, `item${items.length + 1}`] });
+      });
+    }
+  }
+
+  new App(document.querySelector("#app"));
+</script> -->
